@@ -1,0 +1,57 @@
+/* Styles go here */
+.card {
+    border-radius: 10px;
+    margin: 8px;
+    border: 2px solid black;
+    width: 130px;
+    height: 180;
+}
+/* entire container, keeps perspective */
+
+.flip-container{
+    width: 130px;
+    height: 180px;
+    perspective: 1000;
+    margin: 8px;
+
+}
+
+/* flip the pane when hovered */
+
+.flipped {
+    /*transform*/
+    transform: rotateY(180deg);
+    left: 45px;
+}
+
+
+/* flip speed goes here */
+
+.flipper {
+    /*transition*/
+    transition: 0.6s;
+    /*transform-style*/
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+
+/* hide back of pane during swap */
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+/* front pane, placed above back */
+
+.front {
+    z-index: 2;
+    
+}
+/* back, initially hidden pane */
+
+.back {
+    transform: rotateY(180deg);
+}
