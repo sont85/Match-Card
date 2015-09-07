@@ -1,6 +1,7 @@
 'use strict';
 angular.module('MemoryCard.service', [])
   .service('GameService', function(CardFactory) {
+    var firstPick = null;
     this.createCardSet = function(totalCards) {
       var cardCollection = CardFactory;
       var randomCollection = [];
@@ -20,6 +21,24 @@ angular.module('MemoryCard.service', [])
       };
       for (var item in resetValues) {
         $scope[item] = resetValues[item];
+      }
+    };
+    this.pickCard = function($scope, card) {
+      if ($scope.selectedCard.indexOf(card.id) < 0) {
+        $scope.selectedCard.push(card.id);
+      }
+      if (!firstPick) {
+        firstPick = card.name;
+      } else if (firstPick === card.name && $scope.selectedCard[0] !== card.id) {
+        firstPick = null;
+        $scope.matchedCard.push(card.name);
+        $scope.selectedCard = [];
+      } else if ($scope.selectedCard[0] !== card.id) {
+        setTimeout(function() {
+          $scope.selectedCard = [];
+        }, 100);
+        firstPick = null;
+        $scope.missScore += 1;
       }
     };
   });

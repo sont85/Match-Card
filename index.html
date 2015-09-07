@@ -27,7 +27,7 @@
       <div class="row">
         <div ng-repeat="card in cards">
           <div class="flip-container col-xs-1">
-            <div class="flipper" id={{card[0].id}} ng-click="pick(card[0].id, card[0].name)" ng-class="{flipped: selectedCard.indexOf(card[0].id) >= 0 || matchedCard.indexOf(card[0].name) >= 0}">
+            <div class="flipper" id={{card[0].id}} ng-click="pick(card[0])" ng-class="{flipped: selectedCard.indexOf(card[0].id) >= 0 || matchedCard.indexOf(card[0].name) >= 0}">
               <img class="card back" ng-src="{{card[0].url}}">
               <img class="card front" ng-src="{{frontImage}}">
             </div>
