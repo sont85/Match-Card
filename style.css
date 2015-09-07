@@ -7,7 +7,9 @@
     height: 180;
 }
 /* entire container, keeps perspective */
-
+.red {
+  color: red;
+}
 .flip-container{
     width: 130px;
     height: 180px;
@@ -48,7 +50,7 @@
 
 .front {
     z-index: 2;
-    
+
 }
 /* back, initially hidden pane */
 

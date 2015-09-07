@@ -1,6 +1,7 @@
 'use strict';
 angular.module('MemoryCard.service', [])
   .service('GameService', function(CardFactory) {
+    var self = this;
     var firstPick = null;
     this.createCardSet = function(totalCards) {
       var cardCollection = CardFactory;
@@ -18,25 +19,45 @@ angular.module('MemoryCard.service', [])
         matchedCard: [],
         selectedCard: [],
         cards: randomCollection,
+        timeFail: 0,
+        time: 7
       };
       for (var item in resetValues) {
         $scope[item] = resetValues[item];
       }
     };
-    this.pickCard = function($scope, card) {
-      if ($scope.selectedCard.indexOf(card.id) < 0) {
-        $scope.selectedCard.push(card.id);
+    this.stopCount = function() {
+      for(var i = 0; i<9999; i++) {
+        window.clearInterval(i);
       }
+    };
+    this.startCount = function($scope) {
+      $scope.time = 7;
+      setInterval(function(){
+        $scope.$apply(function(){
+          $scope.time -= 1;
+          if ($scope.time === 0) {
+            self.stopCount();
+            $scope.timeFail += 1;
+          }
+        });
+      }, 1000);
+    };
+    this.pickCard = function($scope, card) {
+      $scope.selectedCard.push(card.id);
       if (!firstPick) {
         firstPick = card.name;
+        self.startCount($scope);
       } else if (firstPick === card.name && $scope.selectedCard[0] !== card.id) {
         firstPick = null;
         $scope.matchedCard.push(card.name);
         $scope.selectedCard = [];
+        self.stopCount();
       } else if ($scope.selectedCard[0] !== card.id) {
         setTimeout(function() {
           $scope.selectedCard = [];
-        }, 100);
+          self.stopCount();
+        }, 10);
         firstPick = null;
         $scope.missScore += 1;
       }
