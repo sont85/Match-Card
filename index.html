@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html ng-app="MemoryCard">
+<html ng-app="CardMatch">
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body ng-controller="mainController">
   <div class="container">
-    <h3 class="text-center">Memory Card Game</h3>
-    <div ng-if="cards">
-      <h3 class="text-center" ng-show="matchedCard.length >= totalCards/2">Congratulation</h3>
-      <h3 class="text-center" ng-show="timeFail >= 3">Time's Up Game Over</h3>
-      <div class="row">
-        <div class="col-sm-4 col-sm-offset-2">
-          <h4>Match Score {{matchedCard.length}}</h4>
-          <h4>Miss Score {{missScore}}</h4>
+    <div class="text-center">
+      <h1 class='title'>Card Match</h1>
+      <h3 ng-show="matchedCard.length >= totalCards/2">Congratulation</h3>
+      <h3 ng-show="timeFail >= 3">Time's Up Game Over</h3>
+      <button class="btn btn-primary btn-lg" id="playButton" ng-click="initializeGame()">Play Again</button>
+    </div>
+    <div class="row">
+      <div class='col-sm-3'>
+        <div class='score-board white-font'>
+          <h2 ng-class='{red : time === 0}'>Time: {{time}}</h2>
+          <h4>Match: {{matchedCard.length}}</h4>
+          <h4>Miss: {{missScore}}</h4>
           <h4>Time Fail: {{timeFail}}</h4>
-          <h3 ng-class='{red : time === 0}'>Time: {{time}}</h3>
-        </div>
-        <div class="col-sm-6">
-          <button class="btn btn-default" id="playButton" ng-click="initializeGame()">Play Again</button>
-          <label>Number of Cards</label>
+          <label>Number of Cards: </label>
           <input type="number" ng-model="totalCards" id="pairSelector" ng-change="pairChange(totalCards)" min="10" max="20" step="2">
-          <h4>{{totalCards/2}} Total Pairs</h4>
+          <h5>{{totalCards/2}} Total Pairs</h5>
         </div>
       </div>
-      <div class="row">
+      <div class='col-sm-9'>
         <div ng-repeat="card in cards">
           <div class="flip-container col-xs-1">
             <div class="flipper" id={{card[0].id}} ng-click="pick(card[0])" ng-class="{flipped: selectedCard.indexOf(card[0].id) >= 0 || matchedCard.indexOf(card[0].name) >= 0}">
@@ -38,10 +39,10 @@
   </div>
   <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <script src="https://code.angularjs.org/1.4.0/angular.js"></script>
   <script src="cards.js"></script>
   <script src="gameService.js"></script>
   <script src="script.js"></script>
 </body>
-
 </html>

@@ -1,5 +1,5 @@
 'use strict';
-angular.module('MemoryCard', ['MemoryCard.factory', 'MemoryCard.service'])
+angular.module('CardMatch', ['CardMatch.factory', 'CardMatch.service'])
   .controller('mainController', ['$scope', 'CardFactory', 'GameService', function($scope, CardFactory, GameService) {
     function initializeGame(totalCards) {
       var randomCollection = GameService.createCardSet(totalCards);

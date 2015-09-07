@@ -1,4 +1,8 @@
 /* Styles go here */
+body {
+  color: #DDD;
+  background: #87BBCC;
+}
 .card {
     border-radius: 10px;
     margin: 8px;
@@ -10,16 +14,30 @@
 .red {
   color: red;
 }
+
+.title {
+  font-style: oblique;
+  letter-spacing: 3px;
+  font-size: 50px;
+  font-family: monospace;
+}
+.score-board {
+  border: 2px solid #999;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #29b;
+  box-shadow: 0px 5px 5px black;
+}
+.score-board input{
+  color: black;
+}
 .flip-container{
     width: 130px;
     height: 180px;
     perspective: 1000;
     margin: 8px;
-
 }
-
 /* flip the pane when hovered */
-
 .flipped {
     /*transform*/
     transform: rotateY(180deg);

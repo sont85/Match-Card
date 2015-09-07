@@ -1,5 +1,5 @@
 'use strict';
-angular.module('MemoryCard.service', [])
+angular.module('CardMatch.service', [])
   .service('GameService', function(CardFactory) {
     var self = this;
     var firstPick = null;
@@ -27,18 +27,19 @@ angular.module('MemoryCard.service', [])
       }
     };
     this.stopCount = function() {
-      for(var i = 0; i<9999; i++) {
+      for (var i = 0; i < 9999; i++) {
         window.clearInterval(i);
       }
     };
     this.startCount = function($scope) {
       $scope.time = 7;
-      setInterval(function(){
-        $scope.$apply(function(){
+      setInterval(function() {
+        $scope.$apply(function() {
           $scope.time -= 1;
           if ($scope.time === 0) {
             self.stopCount();
             $scope.timeFail += 1;
+            toastr.error((3 - $scope.timeFail) + ' chance left', "Time's Up!");
           }
         });
       }, 1000);

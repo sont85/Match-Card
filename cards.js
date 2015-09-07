@@ -1,4 +1,4 @@
-angular.module('MemoryCard.factory', [])
+angular.module('CardMatch.factory', [])
 .factory('CardFactory', function() {
   return [{
     id: 'card1',
