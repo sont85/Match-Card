@@ -4,7 +4,11 @@ angular.module('CardMatch.service', [])
     var self = this;
     var firstPick = null;
     this.createCardSet = function(totalCards) {
-      var cardCollection = CardFactory;
+      var cardCollection = [];
+      for (var i = 0; i<totalCards; i++) {
+         cardCollection.push(CardFactory[i]);
+      }
+      console.log(cardCollection);
       var randomCollection = [];
       while (randomCollection.length < totalCards) {
         var randomNumber = Math.floor(Math.random() * cardCollection.length);
@@ -60,7 +64,7 @@ angular.module('CardMatch.service', [])
           self.stopCount();
         }, 10);
         firstPick = null;
-        $scope.missScore += 1;
+        $scope.missScore += 1;        
       }
     };
   });
