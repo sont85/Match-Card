@@ -3,82 +3,82 @@ angular.module('CardMatch.factory', [])
   return [{
     id: 'card1',
     name: 'stairs',
-    url: 'http://www.mobiletoones.com/downloads/wallpapers/abstract_wallpapers/preview/92/71645-graffiti-illusion.jpeg'
+    url: 'img/illusion1.jpeg'
   }, {
     id: 'card2',
     name: 'stairs',
-    url: 'http://www.mobiletoones.com/downloads/wallpapers/abstract_wallpapers/preview/92/71645-graffiti-illusion.jpeg'
+    url: 'img/illusion1.jpeg'
   }, {
     id: 'card3',
     name: 'dice',
-    url: ('http://wallpoper.com/images/00/00/07/20/illusion_00000720.jpg')
+    url: 'img/illusion2.jpg'
   }, {
     id: 'card4',
     name: 'dice',
-    url: ('http://wallpoper.com/images/00/00/07/20/illusion_00000720.jpg')
+    url: 'img/illusion2.jpg'
   }, {
     id: 'card5',
-    name: 'bikeSidewalk',
-    url: ('http://fonepics.net/uploads/pictures/big_images/illusion_street_ride.jpg')
+    name: 'doorZip',
+    url: 'img/illusion9.jpg'
   }, {
     id: 'card6',
-    name: 'bikeSidewalk',
-    url: ('http://fonepics.net/uploads/pictures/big_images/illusion_street_ride.jpg')
+    name: 'doorZip',
+    url: 'img/illusion9.jpg'
   }, {
     id: 'card7',
     name: 'windmillSoldier',
-    url: ('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSHlDhQDCgOjwssbe4VLNNcWCK-IuZ0xmGATJzK-mTjhIURO0iW')
+    url: 'img/illusion3.jpeg'
   }, {
     id: 'card8',
     name: 'windmillSoldier',
-    url: ('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSHlDhQDCgOjwssbe4VLNNcWCK-IuZ0xmGATJzK-mTjhIURO0iW')
+    url: 'img/illusion3.jpeg'
   }, {
     id: 'card9',
     name: 'spinningWheels',
-    url: ('http://sherly.mobile9.com/download/media/210/opticalill_1aql7aqe.jpg')
+    url: 'img/illusion4.jpg'
   }, {
     id: 'card10',
     name: 'spinningWheels',
-    url: ('http://sherly.mobile9.com/download/media/210/opticalill_1aql7aqe.jpg')
+    url: 'img/illusion4.jpg'
   }, {
     id: 'card11',
-    name: 'faceLand',
-    url: ('http://mobiwallpapers.net/uploads/pictures/big_images/17576-optical-illusion.jpg')
+    name: 'riderMan',
+    url: 'img/illusion10.jpg'
   }, {
     id: 'card12',
-    name: 'faceLand',
-    url: ('http://mobiwallpapers.net/uploads/pictures/big_images/17576-optical-illusion.jpg')
+    name: 'riderMan',
+    url: 'img/illusion10.jpg'
   }, {
     id: 'card13',
-    name: 'nunStream',
-    url: ('http://wordsculptures.com/page/wp-content/uploads/2010/04/illusion.jpg')
+    name: 'oldYoung',
+    url: 'img/illusion5.jpg'
   }, {
     id: 'card14',
-    name: 'nunStream',
-    url: ('http://wordsculptures.com/page/wp-content/uploads/2010/04/illusion.jpg')
+    name: 'oldYoung',
+    url: 'img/illusion5.jpg'
   }, {
     id: 'card15',
-    name: 'dots',
-    url: ('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTN1pjd8AiutbTQ56-rADG7Vo5z3mK9bbqh2kkJ6gMZKJoI-9ED')
+    name: 'groupFace',
+    url: 'img/illusion7.jpg'
   }, {
     id: 'card16',
-    name: 'dots',
-    url: ('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTN1pjd8AiutbTQ56-rADG7Vo5z3mK9bbqh2kkJ6gMZKJoI-9ED')
+    name: 'groupFace',
+    url: 'img/illusion7.jpg'
   }, {
     id: 'card17',
     name: 'birdFish',
-    url: ('http://www.mobileapples.com/Assets/Content/Wallpapers/illusion.jpg')
+    url: 'img/illusion6.jpg'
   }, {
     id: 'card18',
     name: 'birdFish',
-    url: ('http://www.mobileapples.com/Assets/Content/Wallpapers/illusion.jpg')
+    url: 'img/illusion6.jpg'
   }, {
     id: 'card19',
-    name: 'eggBird',
-    url: ('http://fonepics.net/uploads/pictures/big_images/illusion_egg_bird.jpg')
+    name: 'tableHead',
+    url: 'img/illusion8.jpg'
   }, {
     id: 'card20',
-    name: 'eggBird',
-    url: ('http://fonepics.net/uploads/pictures/big_images/illusion_egg_bird.jpg')
+    name: 'tableHead',
+    url: 'img/illusion8.jpg'
   }];
 });
